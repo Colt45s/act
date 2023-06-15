@@ -8,13 +8,15 @@ jobs:
     steps: 
       - run: |
           echo "1: $GITHUB_REF"
-          version="${GITHUB_REF#refs/tags/}"
-          echo "2: $version"
+          tag="${GITHUB_REF#refs/tags/}"
+          echo "2: $tag"
+          version="${GITHUB_REF#refs/tags/v}"
+          echo "3: $version"
           branches="${GITHUB_REF#refs/branches/}"
-          echo "3: $branches"
+          echo "4: $branches"
 
           if [[ $GITHUB_REF == refs/tags/* ]]; then
-            echo "4: tag"
+            echo "5: tag"
           else
-            echo "4: non-tag"
+            echo "5: non-tag"
           fi
