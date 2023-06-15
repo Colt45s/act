@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.1.3](https://github.com/Colt45s/act/compare/v0.1.2...v0.1.3) - 2023-06-15
+- test by @Colt45s in https://github.com/Colt45s/act/pull/5
+
 ## [v0.1.2](https://github.com/Colt45s/act/compare/v0.1.1...v0.1.2) - 2023-06-15
 - test by @Colt45s in https://github.com/Colt45s/act/pull/3
 
