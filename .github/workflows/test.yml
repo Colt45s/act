@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - run: |
-          echo "$GITHUB_REF"
+          echo "1: $GITHUB_REF"
           version="${GITHUB_REF#refs/tags/}"
-          echo "$version"
+          echo "2: $version"
           branches="${GITHUB_REF#refs/branches/}"
-          echo "$branches"
+          echo "3: $branches"
