@@ -28,3 +28,8 @@ jobs:
         shell: bash
         run: |
           echo "Release created: ${{ steps.release.outputs.tag_name }}"
+      
+      - name: Always
+        shell: bash
+        run: |
+          echo "Always: ${{ steps.release.outputs.tag_name }}"
