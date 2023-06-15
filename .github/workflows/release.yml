@@ -1,0 +1,30 @@
+name: release-please
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          release-type: simple
+          include-v-in-tag: true
+          pull-request-header: ":rocket: New release"
+
+      - name: Report release
+        # Releaseコミットがマージされた場合にのみ実行する
+        if: ${{ steps.release.outputs.release_created }}
+        shell: bash
+        run: |
+          echo "Release created: ${{ steps.release.outputs.tag_name }}"

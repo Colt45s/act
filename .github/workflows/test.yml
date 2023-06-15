@@ -20,3 +20,6 @@ jobs:
           else
             echo "5: non-tag"
           fi
+
+          echo "6: ${{ github.event_name }}"
+          echo "7: ${{ github.ref }}"
