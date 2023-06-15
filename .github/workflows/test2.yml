@@ -28,7 +28,7 @@ jobs:
       - name: out
         run: |
           tag="${{ steps.tag.outputs.tag }}"
-          version=${tag#v}
+          version="${tag#v}"
           echo "1: $version"
           test="$version-SNAPSHOT"
           echo "2: $test"
