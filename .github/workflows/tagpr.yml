@@ -11,3 +11,8 @@ jobs:
     - uses: Songmu/tagpr@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: release
+      if: ${{ steps.tagpr.outputs.tag != "" }}
+      shell: bash
+      run: |
+        echo ":rocket: Release ${{ steps.tagpr.outputs.tag }}"
