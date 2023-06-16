@@ -10,7 +10,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
-      - uses: Songmu/tagpr@v1
+      - uses: Songmu/tagpr@main
       - name: log
         shell: bash
         run: |
